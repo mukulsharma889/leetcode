@@ -1,0 +1,10 @@
+import javax.servlet.*;
+import java.io.*;
+import javax.servlet.http.*;
+public class Mine extends HttpServlet {
+public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException,IOException {
+res.setContentType("text/html");
+PrintWriter pout = res.getWriter();
+pout.println("hello");
+}
+}
