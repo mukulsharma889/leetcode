@@ -1,0 +1,30 @@
+class Solution {
+    public String[] findRestaurant(String[] list1, String[] list2) {
+        int check = Integer.MAX_VALUE;
+        HashSet<String> s = new HashSet<>();
+        for(int i = 0 ; i < list1.length ; i++) {
+            for(int j = 0 ; j < list2.length ; j++) {
+                if(list1[i].equals(list2[j])) {
+                    if(i+j < check) {
+                        check = i+j;
+                        s.clear();
+                        s.add(list1[i]);
+                    }
+                    if(check == i+j) {
+                        check = i+j;
+                        s.add(list1[i]);
+                    }
+                    break;
+                }
+            }
+        }
+        String[] s1 = new String[s.size()];
+        Iterator<String> it = s.iterator();
+        int i = 0;
+        for(String e:s) {
+            s1[i] = e;
+            i++;
+        }
+        return s1;
+    }
+}
