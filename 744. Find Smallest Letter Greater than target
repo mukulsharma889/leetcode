@@ -1,0 +1,15 @@
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        int sum = -1;
+        for(int i = 0 ; i < letters.length ; i++) {
+            int value = String.valueOf(letters[i]).compareTo(String.valueOf(target));
+            if(value > 0 && (sum > value || sum == -1)) {
+                sum = i;
+            }
+
+            if(sum > -1)
+                return letters[sum];
+        }
+        return letters[0];
+    }
+}
